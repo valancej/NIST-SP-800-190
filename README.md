@@ -2,4 +2,4 @@
 
 ## 4.1 Image Countermeasures
 
-##### 4.1.1 Image Vulnerabilities
+####### 4.1.1 Image Vulnerabilities
