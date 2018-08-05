@@ -6,7 +6,7 @@
 
 Anchore Engine will scan images and create a manifest of packages. From this manifest, there is the ability to run checks for image vulnerabilites. Along with this, the ability to periodically check if new vulnerabilies have been published that directly impact a package contained within a relevant image manifest. 
 
-Anchore has the ability to be integrated with common CI/CD tools (Jenkins, CircleCI, etc.), or in an adhoc manner from a command line. From these integrations, policy check can be enforced to potentially fail builds. 
+Anchore has the ability to be integrated with common CI/CD tools (Jenkins, CircleCI, etc.), or in an adhoc manner from a command line. From these integrations, policy checks can be enforced to potentially fail builds. 
 
 
 ###### 4.1.2 Image Configuration Defects
