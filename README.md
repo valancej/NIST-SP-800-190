@@ -34,6 +34,12 @@ Anchore provides image checks and vulnerability info for the following third par
 
 Policies can be created that enforce Dockerfile and image best practices. As an example, Anchore allows the ability to look for a base image to be in existance via a regex check. These regular expressions can be used to enforce policies specific to image layers, files, etc..
 
+Anchore provides a mechanism for stopping images built from Dockerfiles that have exposed port 22. As outlined in the NIST publication, SSH and other remote administration tools that provide remote access should never be enabled within containers. In this case, an Anchore policy check can be set up to block this image if it exposes port 22.
+
+A common security best practice is reduce attack surface areas, in the case of Docker images, having a list of base layers from minimilistic technologies (Alpine Linux). An Anchore policy can be configured to check for certain base image layers via a FROM statement existing in a Dockerfile. 
+
+
+
 ###### 4.1.4 Embedded clear text secrets
 
 Clear text secrets should never be present inside of images. They should be stored outside of the image and provided dynamically at runtime as needed. 
