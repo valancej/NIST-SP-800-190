@@ -1,17 +1,62 @@
-# NIST-SP-800-190
+# NIST SP 800-190
+
+## Introduction
+
+The National Institute of Standards and Technology Special Publication 800-190 was designed to explain the security concerns associated with container technologies. Along with this, recommendations are made thoughout the publication for addressing the outlined concerns. 
 
 ## 4.1 Image Countermeasures
 
 ###### 4.1.1 Image Vulnerabilities
 
-Anchore Engine will scan images and create a manifest of packages. From this manifest, there is the ability to run checks for image vulnerabilites. Along with this, the ability to periodically check if new vulnerabilies have been published that directly impact a package contained within a relevant image manifest. 
+Anchore Engine will scan images and create a manifest of packages. From this manifest, there is the ability to run checks for image vulnerabilites. In addition,the ability to periodically check if new vulnerabilies have been published that directly impact a package contained within a relevant image manifest. 
 
-Anchore has the ability to be integrated with common CI/CD tools (Jenkins, CircleCI, etc.), or in an adhoc manner from a command line. From these integrations, policy checks can be enforced to potentially fail builds. 
+Anchore has the ability to be integrated with common CI/CD tools (Jenkins), or in an adhoc manner from a command line. From these integrations, policy checks can be enforced to potentially fail builds. 
 
-Depending on overall container footprint, Anchore checks will provide the most value through a proper CI/CD model/pipeline. Having the ability to split up acceptable base images and application layers is critical for appropriate security abstraction. Multiple Anchore gates specific to each of these image layers is fundamental. As an example, prior to trusted base image promotion and push into a binary repo, it will need to pass Anchore checks for Dockerfile best practices (USER, non ssh open), and operating system package vulnerability checks. 
+Anchore can be integrated with an on-premise image registry, public or private Dockerhub, AWS, Azure, Artifactory, etc..
 
-Secondary to the above, once a set of base images have been signed (Notary) and push into a trusted repo, it is now a requirement for all 'application specific' images to be created. It is the responsibility of whoever is building these images to make sure the appropriate base images are being used. Inheritance will apply here, and only signed images from the trusted repo will be able to pass the next set of Anchore policy checks. These checks will not only focus on the signed and approved base layer images, but depending on the application layer dependencies, will check for any npm or python packages that contain published vulns. 
+Anchore provides image checks and vulnerability info for the following base layers:
+
+- Alpine
+- Ubuntu
+- CentOS
+- Debian
+- Red Hat Enterprise Linux
+
+Anchore provides image checks and vulnerability info for the following third party packages contained within images:
+
+- NodeJS
+- Ruby
+- Python
+- Java
+
 
 ###### 4.1.2 Image Configuration Defects
 
 Policies can be created that enforce Dockerfile and image best practices. As an example, Anchore allows the ability to look for a base image to be in existance via a regex check. These regular expressions can be used to enforce policies specific to image layers, files, etc..
+
+###### 4.1.2 Image Configuration Defects
+
+###### 4.1.4 Embedded clear text secrets
+
+Clear text secrets should never be present inside of images. They should be stored outside of the image and provided dynamically at runtime as needed. 
+
+Anchore provides mechanisms to search for secrets that may be contained within an image via a regex check (filename or content). The common ones availble by default are:
+
+- AWS_ACCESS_KEY
+- AWS_SECRET_KEY
+- PRIV_KEY
+- DOCKER_AUTH
+- API_KEY
+
+###### 4.2.2 Stale images in the registry
+
+There are two ways to mitigate the risk of stale images being used: 
+
+- Organizations can prune registries that contain vulnerable images
+- Best practices should be collectively agreed upon to only allow access to images that are fresh. 
+
+Within Anchore, a policy check can be set up to check for a tag of an image that has not been deemed stale. As an example, if a development team builds a my-app:latest image inheriting from my-base-layer:latest within their trusted registry that they have built, an Anchore Dockerfile check can for my-base:latest to be present. Along with the appropriate amount of automation and checks,the risk of using stale and older images is greatly decreased.  
+
+###### 4.4.1 Vulnerabilities within the runtime software
+
+While this can only partly handled by Anchore itself, it is important for organizations to shift security check as far left as possible in the development lifecycle in order to catch Common Vulnerabilities and Exposures (CVEs) prior to a container being deployed. Anchore provides policy gates and checks for 3rd party packages (NPM, GEM, JAVA, PY), in order to provide insight into any potential vulnerabilites. Setting up these checks is a good place to start. 
