@@ -34,8 +34,6 @@ Anchore provides image checks and vulnerability info for the following third par
 
 Policies can be created that enforce Dockerfile and image best practices. As an example, Anchore allows the ability to look for a base image to be in existance via a regex check. These regular expressions can be used to enforce policies specific to image layers, files, etc..
 
-###### 4.1.2 Image Configuration Defects
-
 ###### 4.1.4 Embedded clear text secrets
 
 Clear text secrets should never be present inside of images. They should be stored outside of the image and provided dynamically at runtime as needed. 
