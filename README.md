@@ -38,7 +38,10 @@ Anchore provides a mechanism for stopping images built from Dockerfiles that hav
 
 A common security best practice is reduce attack surface areas, in the case of Docker images, having a list of base layers from minimilistic technologies (Alpine Linux). An Anchore policy can be configured to check for certain base image layers via a FROM statement existing in a Dockerfile. 
 
+Other use cases for Anchore policy checks:
 
+- Dockerfiles must have USER
+- Dockerfiles must have HEALTHCHECK
 
 ###### 4.1.4 Embedded clear text secrets
 
