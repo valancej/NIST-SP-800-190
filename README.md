@@ -55,6 +55,17 @@ Anchore provides mechanisms to search for secrets that may be contained within a
 - DOCKER_AUTH
 - API_KEY
 
+###### 4.1.5 Use of untrusted images
+
+As outlined in the publication, organization should maintain a set of trusted images and registries. By only allowing trusted images to be used, the risk of untrusted, vulnerable images is mitigated. There are several tools that can be used to help with achieving this: 
+
+- Anchore
+- Notary
+- Jenkins
+- Docker Registry
+
+More details around how to setup a secure container based CI/CD Pipeline here: https://anchore.com/blog/container-security-cicd-pipeline-open-source/
+
 ###### 4.2.2 Stale images in the registry
 
 There are two ways to mitigate the risk of stale images being used: 
