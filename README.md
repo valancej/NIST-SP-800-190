@@ -88,6 +88,25 @@ Within Anchore, a policy check can be set up to check for a tag of an image that
 
 While this can only partly handled by Anchore itself, it is important for organizations to shift security check as far left as possible in the development lifecycle in order to catch Common Vulnerabilities and Exposures (CVEs) prior to a container being deployed. Anchore provides policy gates and checks for 3rd party packages (NPM, GEM, JAVA, PY), in order to provide insight into any potential vulnerabilites. Setting up these checks is a good place to start. 
 
+###### 4.4.3 Insecure container runtime configurations
+
+Again, this is not a section that is completely handled by Anchore, as the focus itself is on runtime configurations. However, by alligning the allowable Anchore policies with CIS Docker benchmarks, this section can be considerated partially compliant. 
+
+Within the CIS Docker Benchmark document the following are achievable with Anchore: 
+
+- Create a USER for the container.
+- Use of trusted base images for containers.
+- Do not install unnecessary packages in the container.
+- Scan and rebuild the images to include security patches. Anchore can scan images frequently to check for vulnerabilites and trigger alerting if found. With the appropriate response automation, when vulnerablies are found, they should be quickly patched, the images rebuilt, and new containers instantiated. 
+- Enable content trust. Only sign images with Notary and push them to trusted registry after they have passed Anchore policy checks.
+- Add HEALTHCHECK instruction to the container image. 
+- Do not use update instruction alone in the Dockerfile.
+- Use COPY instead of ADD in Dockerfile.
+- Do not store secrets in Dockerfiles.
+- Install verified packages only.
+
+Some of these are redundant and will be accomplished as part of the Image Countermeasures section.
+
 ###### 4.4.5 Rogue containers
 
 Anchore used in conjunction with CI tooling, image signing, and the appropriate development, testing, and production pipelines/environments will help to mitigate the risk of rogue containers being used. As an example, if only specific images can be pushed to the appropriate registries via a Jenkins user, the chance of rogue containers being instantiated in a production environment by an unauthorized user is greatly reduced. Anchore policy checks as part of this pipeline can be set up to enforce baseline requirements for vulnerabilities and compliance. 
