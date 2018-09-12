@@ -38,7 +38,7 @@ Policies can be created that enforce Dockerfile and image best practices. As an 
 
 Anchore provides a mechanism for stopping images built from Dockerfiles that have exposed port 22. As outlined in the NIST publication, SSH and other remote administration tools that provide remote access should never be enabled within containers. In this case, an Anchore policy check can be set up to block this image if it exposes port 22.
 
-A common security best practice is reduce attack surface areas, in the case of Docker images, having a list of base layers from minimilistic technologies (Alpine Linux). An Anchore policy can be configured to check for specific base image layers via a FROM instruction existing in a Dockerfile. 
+A common security best practice is reduce attack surface areas as much as possible. In the case of Docker images, having a set list of base layers from minimilistic technologies (Alpine Linux) that are allowed use, alligns with the stated best practice. An Anchore policy can be configured to check for specific base image layers via a FROM instruction existing in a Dockerfile. 
 
 Other use cases for Anchore policy checks:
 
