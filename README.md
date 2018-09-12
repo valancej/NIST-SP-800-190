@@ -4,7 +4,9 @@
 
 The National Institute of Standards and Technology Special Publication 800-190 was designed to explain the security concerns associated with container technologies. Along with this, recommendations are made thoughout the publication for addressing the outlined concerns. 
 
-Below details how Anchore can help with execution and mapping of section 4.1 Image Countermeasures.
+Below details how Anchore can help with execution and mapping of NIST SP 800-190 - 4.1 Image Countermeasures.
+
+The below mappings are only specific to Anchore and similar technologies. Capabilities such as runtime security,  
 
 ## 4.1 Image Countermeasures
 
@@ -80,8 +82,15 @@ There are two ways to mitigate the risk of stale images being used:
 
 Within Anchore, a policy check can be set up to check for a tag of an image that has not been deemed stale. As an example, if a development team builds a my-app:latest image inheriting from my-base-layer:latest within their trusted registry that they have built, an Anchore Dockerfile check can for my-base:latest to be present. Along with the appropriate amount of automation and checks,the risk of using stale and older images is greatly decreased.  
 
+## Container Countermeasures
+
 ###### 4.4.1 Vulnerabilities within the runtime software
 
 While this can only partly handled by Anchore itself, it is important for organizations to shift security check as far left as possible in the development lifecycle in order to catch Common Vulnerabilities and Exposures (CVEs) prior to a container being deployed. Anchore provides policy gates and checks for 3rd party packages (NPM, GEM, JAVA, PY), in order to provide insight into any potential vulnerabilites. Setting up these checks is a good place to start. 
+
+###### 4.4.5 Rogue containers
+
+Anchore used in conjunction with CI tooling, image signing, and the appropriate development, testing, and production pipelines/environments will help to mitigate the risk of rogue containers being used. As an example, if only specific images can be pushed to the appropriate registries via a Jenkins user, the chance of rogue containers being instantiated in a producted environment is greatly reduced. Anchore policy checks as part of this pipeline can be set up to enforce baseline requirements for vulnerabilities and compliance. 
+
 
 ## Conclusion
