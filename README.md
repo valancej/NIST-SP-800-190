@@ -4,7 +4,7 @@
 
 The National Institute of Standards and Technology Special Publication 800-190 was designed to explain the security concerns associated with container technologies. Along with this, recommendations are made thoughout the publication for addressing the outlined concerns. 
 
-Below details how Anchore can help with execution on section 4.1 of NIST SP 800-190 Image Countermeasures.
+Below details how Anchore can help with execution and mapping of section 4.1 Image Countermeasures.
 
 ## 4.1 Image Countermeasures
 
