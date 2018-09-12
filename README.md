@@ -83,3 +83,5 @@ Within Anchore, a policy check can be set up to check for a tag of an image that
 ###### 4.4.1 Vulnerabilities within the runtime software
 
 While this can only partly handled by Anchore itself, it is important for organizations to shift security check as far left as possible in the development lifecycle in order to catch Common Vulnerabilities and Exposures (CVEs) prior to a container being deployed. Anchore provides policy gates and checks for 3rd party packages (NPM, GEM, JAVA, PY), in order to provide insight into any potential vulnerabilites. Setting up these checks is a good place to start. 
+
+## Conclusion
