@@ -73,6 +73,8 @@ As outlined in the publication, organization should maintain a set of trusted im
 
 More details around how to setup a secure container based CI/CD Pipeline here: https://anchore.com/blog/container-security-cicd-pipeline-open-source/
 
+## 4.2 Registry Countermeasures
+
 ###### 4.2.2 Stale images in the registry
 
 There are two ways to mitigate the risk of stale images being used: 
@@ -82,7 +84,7 @@ There are two ways to mitigate the risk of stale images being used:
 
 Within Anchore, a policy check can be set up to check for a tag of an image that has not been deemed stale. As an example, if a development team builds a my-app:latest image inheriting from my-base-layer:latest within their trusted registry that they have built, an Anchore Dockerfile check can for my-base:latest to be present. Along with the appropriate amount of automation and checks,the risk of using stale and older images is greatly decreased.  
 
-## Container Countermeasures
+## 4.4 Container Countermeasures
 
 ###### 4.4.1 Vulnerabilities within the runtime software
 
