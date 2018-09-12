@@ -122,3 +122,5 @@ Anchore used in conjunction with CI tooling, image signing, and the appropriate 
 This section can be achieved with Network Tools, Active Directory, and human input/controls. No use for Anchore here. 
 
 ## Conclusion
+
+The NIST SP 800-190 details the best ways to counter the security risks that are presented with container and image usage. Organizations should focus implementing the relevant sections of this document with the correct automation and tooling in order to fulfill their compliance requirements. 
