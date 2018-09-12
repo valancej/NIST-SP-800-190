@@ -10,7 +10,9 @@ Below details how Anchore can help with execution and mapping of section 4.1 Ima
 
 ###### 4.1.1 Image Vulnerabilities
 
-Anchore Engine will scan images and create a manifest of packages. From this manifest, there is the ability to run checks for image vulnerabilites. In addition,the ability to periodically check if new vulnerabilies have been published that directly impact a package contained within a relevant image manifest. 
+Organizations should employ the appropriate set of tooling and security checks to uncover any vulnerabilities at both the operating system and application layer. 
+
+Anchore will scan images and create a manifest of packages. From this manifest, there is the ability to run checks for image vulnerabilites. In addition,the ability to periodically check if new vulnerabilies have been published that directly impact a package contained within a relevant image manifest. 
 
 Anchore has the ability to be integrated with common CI/CD tools (Jenkins), or in an adhoc manner from a command line. From these integrations, policy checks can be enforced to potentially fail builds. 
 
