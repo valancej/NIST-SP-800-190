@@ -16,7 +16,7 @@ Anchore will scan images and create a manifest of packages. From this manifest, 
 
 Anchore has the ability to be integrated with common CI tools (Jenkins), or in an adhoc manner from a command line. From these integrations, policy checks can be enforced to potentially fail builds. 
 
-Anchore can be integrated with an on-premise image registry, public or private Dockerhub, AWS, Azure, Artifactory, etc..
+Anchore is very much Docker v2 registry agnostic and can be integrated with an on-premise image registry, public or private Dockerhub, AWS, Azure, Artifactory, etc..
 
 Anchore provides image checks and vulnerability info for the following base layers:
 
@@ -46,6 +46,7 @@ Other use cases for Anchore policy checks:
 
 - Dockerfiles must have USER instruction.
 - Dockerfiles must have HEALTHCHECK instruction.
+
 
 ###### 4.1.4 Embedded clear text secrets
 
