@@ -82,7 +82,7 @@ There are two ways to mitigate the risk of stale images being used:
 - Organizations can prune registries that contain vulnerable images
 - Best practices should be collectively agreed upon to only allow access to images that are fresh. 
 
-Within Anchore, a policy check can be set up to check for a tag of an image that has not been deemed stale. As an example, if a development team builds a my-app:latest image inheriting from my-base-layer:latest within their trusted registry that they have built, an Anchore Dockerfile check can for my-base:latest to be present. Along with the appropriate amount of automation and checks,the risk of using stale and older images is greatly decreased.  
+Within Anchore, a policy check can be set up to look for a tag of an image that has not been deemed stale. As an example, if a development team builds a my-app:latest image inheriting from my-base-layer:latest within their trusted registry that they have built, an Anchore Dockerfile check can for my-base:latest to be present. Along with the appropriate amount of automation and checks,the risk of using stale and older images is greatly decreased.  
 
 ## 4.4 Container Countermeasures
 
