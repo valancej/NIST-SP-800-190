@@ -42,8 +42,8 @@ A common security best practice is reduce attack surface areas, in the case of D
 
 Other use cases for Anchore policy checks:
 
-- Dockerfiles must have USER
-- Dockerfiles must have HEALTHCHECK
+- Dockerfiles must have USER instruction.
+- Dockerfiles must have HEALTHCHECK instruction.
 
 ###### 4.1.4 Embedded clear text secrets
 
