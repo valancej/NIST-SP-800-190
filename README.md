@@ -90,7 +90,7 @@ While this can only partly handled by Anchore itself, it is important for organi
 
 ###### 4.4.5 Rogue containers
 
-Anchore used in conjunction with CI tooling, image signing, and the appropriate development, testing, and production pipelines/environments will help to mitigate the risk of rogue containers being used. As an example, if only specific images can be pushed to the appropriate registries via a Jenkins user, the chance of rogue containers being instantiated in a producted environment is greatly reduced. Anchore policy checks as part of this pipeline can be set up to enforce baseline requirements for vulnerabilities and compliance. 
+Anchore used in conjunction with CI tooling, image signing, and the appropriate development, testing, and production pipelines/environments will help to mitigate the risk of rogue containers being used. As an example, if only specific images can be pushed to the appropriate registries via a Jenkins user, the chance of rogue containers being instantiated in a production environment by an unauthorized user is greatly reduced. Anchore policy checks as part of this pipeline can be set up to enforce baseline requirements for vulnerabilities and compliance. 
 
 
 ## Conclusion
