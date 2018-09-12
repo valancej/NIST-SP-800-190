@@ -119,6 +119,6 @@ Anchore used in conjunction with CI tooling, image signing, and the appropriate 
 
 ## 4.5 Host Countermeasures
 
-This section can be achieved with network tools, active directory, and human input/controls. No use for Anchore here. 
+This section can be achieved with Network Tools, Active Directory, and human input/controls. No use for Anchore here. 
 
 ## Conclusion
