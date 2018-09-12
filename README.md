@@ -86,7 +86,7 @@ Within Anchore, a policy check can be set up to look for a tag of an image that 
 
 ## 4.3 Orchestrator Countermeasures
 
-This section can be achived with Active Directory and Network tooling. No use for Anchore here. 
+This section can be achieved with Active Directory and Network tooling. No use for Anchore here. 
 
 ## 4.4 Container Countermeasures
 
@@ -117,5 +117,8 @@ Some of these are redundant and will be accomplished as part of the Image Counte
 
 Anchore used in conjunction with CI tooling, image signing, and the appropriate development, testing, and production pipelines/environments will help to mitigate the risk of rogue containers being used. As an example, if only specific images can be pushed to the appropriate registries via a Jenkins user, the chance of rogue containers being instantiated in a production environment by an unauthorized user is greatly reduced. Anchore policy checks as part of this pipeline can be set up to enforce baseline requirements for vulnerabilities and compliance. 
 
+## 4.5 Host Countermeasures
+
+This section can be achieved with network tools, active directory, and human input/controls. No use for Anchore here. 
 
 ## Conclusion
