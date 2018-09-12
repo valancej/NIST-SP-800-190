@@ -6,7 +6,7 @@ The National Institute of Standards and Technology Special Publication 800-190 w
 
 Below details how Anchore can help with execution and mapping of NIST SP 800-190 - 4.1 Image Countermeasures.
 
-The below mappings are only specific to Anchore and similar technologies. Capabilities such as runtime security,  
+The below mappings are only specific to Anchore and similar technologies. Capabilities such as runtime and host security are not discussed, although they are part of the NIST SP 800-190 publication.
 
 ## 4.1 Image Countermeasures
 
