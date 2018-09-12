@@ -123,4 +123,4 @@ This section can be achieved with Network Tools, Active Directory, and human inp
 
 ## Conclusion
 
-The NIST SP 800-190 details the best ways to counter the security risks that are presented with container and image usage. Organizations should focus implementing the relevant sections of this document with the correct automation and tooling in order to fulfill their compliance requirements. 
+The NIST SP 800-190 details the best ways to counter the security risks that are presented with container technology usage. Organizations should focus implementing the relevant sections of this document with the correct automation and tooling in order to fulfill their compliance requirements. 
